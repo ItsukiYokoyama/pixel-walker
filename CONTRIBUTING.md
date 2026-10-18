@@ -133,7 +133,7 @@ GitHub でリリースを作ると、[ditsuki.com のリリースノートのペ
 1. `manifest.json` の `version` を上げる（`1.2.3` の形）
 2. コミットして push し、GitHub Actions のチェックが通るのを確かめる
 3. `python3 tools/make_zip.py` で `dist/pixel-walker-<バージョン>.zip` を作る
-4. [`docs/release-template.md`](docs/release-template.md) をもとにリリースノートを書く（置き換えの手順は毎回入れる）
+4. [`docs/release-template.md`](docs/release-template.md) をもとにリリースノートを書く（前の版からの変更点と、短い更新のしかただけ。インストール方法は README に任せる）
 5. `gh release create v<バージョン> dist/pixel-walker-<バージョン>.zip --title "Pixel Walker v<バージョン>" --notes-file <リリースノート>`
 
 ### ライセンス
@@ -205,7 +205,7 @@ and the extension's "new version available" notice (`https://ditsuki.com/pixel-w
 1. Bump `version` in `manifest.json`
 2. Commit, push, and make sure the GitHub Actions check passes
 3. Run `python3 tools/make_zip.py` to create `dist/pixel-walker-<version>.zip`
-4. Write the release notes from [`docs/release-template.md`](docs/release-template.md) (always include the update steps)
+4. Write the release notes from [`docs/release-template.md`](docs/release-template.md) (only the changes since the previous version and the short update steps; installation is covered by the README)
 5. `gh release create v<version> dist/pixel-walker-<version>.zip --title "Pixel Walker v<version>" --notes-file <notes>`
 
 ### License
