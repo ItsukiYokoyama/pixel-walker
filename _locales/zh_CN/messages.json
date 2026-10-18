@@ -1,0 +1,675 @@
+{
+  "extName": {
+    "message": "Pixel Walker"
+  },
+  "extDescription": {
+    "message": "像素风格的角色会以网页的标题和段落为落脚点行走，还会跳跃和跳下。"
+  },
+  "enabledLabel": {
+    "message": "显示角色"
+  },
+  "sizeLabel": {
+    "message": "大小"
+  },
+  "sizeSmall": {
+    "message": "小"
+  },
+  "sizeMedium": {
+    "message": "中"
+  },
+  "sizeLarge": {
+    "message": "大"
+  },
+  "characterGroupLabel": {
+    "message": "角色"
+  },
+  "contactLabel": {
+    "message": "角色建议・联系我们"
+  },
+  "contactUrl": {
+    "message": "https://ditsuki.com/zh_CN/contact"
+  },
+  "releasesUrl": {
+    "message": "https://ditsuki.com/zh_CN/pixel-walker/releases"
+  },
+  "updateAvailable": {
+    "message": "新版本已发布。可以从$P1$更新程序。",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "updateLink": {
+    "message": "这里"
+  },
+  "updateVersions": {
+    "message": "（当前：$P1$ → 最新：$P2$）",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "updateBadgeLabel": {
+    "message": "有新版本"
+  },
+  "updateCheckLabel": {
+    "message": "检查新版本"
+  },
+  "controlLabel": {
+    "message": "操作角色"
+  },
+  "controlHelp": {
+    "message": "[[←]][[→]] 移动　[[C]] 跳跃（在空中再按 [[C]] 二段跳）　[[↓]]+[[C]] 下落　[[X]] 动作（睡觉、坐下、跳舞）。会飞、会游的角色用 [[↑]][[↓]][[←]][[→]] 移动。请先点击页面再操作"
+  },
+  "char_adventurer": {
+    "message": "冒险家"
+  },
+  "char_boy": {
+    "message": "男孩"
+  },
+  "char_girl": {
+    "message": "女孩"
+  },
+  "char_salaryman": {
+    "message": "上班族"
+  },
+  "char_office_lady": {
+    "message": "职场女性"
+  },
+  "char_chef": {
+    "message": "厨师"
+  },
+  "char_doctor": {
+    "message": "医生"
+  },
+  "char_nurse": {
+    "message": "护士"
+  },
+  "char_police": {
+    "message": "警察"
+  },
+  "char_firefighter": {
+    "message": "消防员"
+  },
+  "char_builder": {
+    "message": "建筑工人"
+  },
+  "char_astronaut": {
+    "message": "宇航员"
+  },
+  "char_cowboy": {
+    "message": "牛仔"
+  },
+  "char_farmer": {
+    "message": "农民"
+  },
+  "char_baseball": {
+    "message": "棒球选手"
+  },
+  "char_student": {
+    "message": "学生"
+  },
+  "char_gakuran": {
+    "message": "立领校服学生"
+  },
+  "char_grandpa": {
+    "message": "爷爷"
+  },
+  "char_grandma": {
+    "message": "奶奶"
+  },
+  "char_baby": {
+    "message": "婴儿"
+  },
+  "char_idol": {
+    "message": "偶像"
+  },
+  "char_painter": {
+    "message": "画家"
+  },
+  "char_detective": {
+    "message": "侦探"
+  },
+  "char_scientist": {
+    "message": "科学家"
+  },
+  "char_mailman": {
+    "message": "邮递员"
+  },
+  "char_santa": {
+    "message": "圣诞老人"
+  },
+  "char_swimmer": {
+    "message": "海边游客"
+  },
+  "char_punk": {
+    "message": "摇滚歌手"
+  },
+  "char_cheer": {
+    "message": "啦啦队员"
+  },
+  "char_diver": {
+    "message": "潜水员"
+  },
+  "char_dog": {
+    "message": "狗"
+  },
+  "char_wolf": {
+    "message": "狼"
+  },
+  "char_fox": {
+    "message": "狐狸"
+  },
+  "char_tanuki": {
+    "message": "狸"
+  },
+  "char_cat": {
+    "message": "猫"
+  },
+  "char_lion": {
+    "message": "狮子"
+  },
+  "char_tiger": {
+    "message": "老虎"
+  },
+  "char_cheetah": {
+    "message": "猎豹"
+  },
+  "char_leopard": {
+    "message": "豹"
+  },
+  "char_jaguar": {
+    "message": "美洲豹"
+  },
+  "char_hyena": {
+    "message": "鬣狗"
+  },
+  "char_meerkat": {
+    "message": "狐獴"
+  },
+  "char_bear": {
+    "message": "熊"
+  },
+  "char_polar": {
+    "message": "北极熊"
+  },
+  "char_panda": {
+    "message": "熊猫"
+  },
+  "char_koala": {
+    "message": "考拉"
+  },
+  "char_kangaroo": {
+    "message": "袋鼠"
+  },
+  "char_horse": {
+    "message": "马"
+  },
+  "char_zebra": {
+    "message": "斑马"
+  },
+  "char_cow": {
+    "message": "牛"
+  },
+  "char_sheep": {
+    "message": "绵羊"
+  },
+  "char_goat": {
+    "message": "山羊"
+  },
+  "char_alpaca": {
+    "message": "羊驼"
+  },
+  "char_camel": {
+    "message": "骆驼"
+  },
+  "char_pig": {
+    "message": "猪"
+  },
+  "char_boar": {
+    "message": "野猪"
+  },
+  "char_deer": {
+    "message": "鹿"
+  },
+  "char_giraffe": {
+    "message": "长颈鹿"
+  },
+  "char_elephant": {
+    "message": "大象"
+  },
+  "char_hippo": {
+    "message": "河马"
+  },
+  "char_rhino": {
+    "message": "犀牛"
+  },
+  "char_rabbit": {
+    "message": "兔子"
+  },
+  "char_hamster": {
+    "message": "仓鼠"
+  },
+  "char_guinea": {
+    "message": "豚鼠"
+  },
+  "char_squirrel": {
+    "message": "松鼠"
+  },
+  "char_hedgehog": {
+    "message": "刺猬"
+  },
+  "char_ferret": {
+    "message": "雪貂"
+  },
+  "char_otter": {
+    "message": "水獭"
+  },
+  "char_beaver": {
+    "message": "海狸"
+  },
+  "char_monkey": {
+    "message": "猴子"
+  },
+  "char_chimp": {
+    "message": "黑猩猩"
+  },
+  "char_orangutan": {
+    "message": "猩猩"
+  },
+  "char_gorilla": {
+    "message": "大猩猩"
+  },
+  "char_blackcat": {
+    "message": "黑猫"
+  },
+  "char_whitecat": {
+    "message": "白猫"
+  },
+  "char_shiba": {
+    "message": "柴犬"
+  },
+  "char_dalmatian": {
+    "message": "斑点狗"
+  },
+  "char_blacklab": {
+    "message": "黑色拉布拉多"
+  },
+  "char_panther": {
+    "message": "黑豹"
+  },
+  "char_snowleopard": {
+    "message": "雪豹"
+  },
+  "char_whitetiger": {
+    "message": "白虎"
+  },
+  "char_arcticfox": {
+    "message": "北极狐"
+  },
+  "char_redpanda": {
+    "message": "小熊猫"
+  },
+  "char_donkey": {
+    "message": "驴"
+  },
+  "char_pony": {
+    "message": "白马"
+  },
+  "char_mouse": {
+    "message": "老鼠"
+  },
+  "char_blacksheep": {
+    "message": "黑羊"
+  },
+  "char_whiterabbit": {
+    "message": "白兔"
+  },
+  "char_reindeer": {
+    "message": "驯鹿"
+  },
+  "char_macaque": {
+    "message": "日本猕猴"
+  },
+  "char_blackbear": {
+    "message": "亚洲黑熊"
+  },
+  "char_duck": {
+    "message": "鸭子"
+  },
+  "char_chick": {
+    "message": "小鸡"
+  },
+  "char_owl": {
+    "message": "猫头鹰"
+  },
+  "char_eagle": {
+    "message": "鹰"
+  },
+  "char_hawk": {
+    "message": "隼"
+  },
+  "char_ostrich": {
+    "message": "鸵鸟"
+  },
+  "char_flamingo": {
+    "message": "火烈鸟"
+  },
+  "char_penguin": {
+    "message": "企鹅"
+  },
+  "char_croc": {
+    "message": "鳄鱼"
+  },
+  "char_turtle": {
+    "message": "乌龟"
+  },
+  "char_lizard": {
+    "message": "蜥蜴"
+  },
+  "char_snake": {
+    "message": "蛇"
+  },
+  "char_frog": {
+    "message": "青蛙"
+  },
+  "char_crow": {
+    "message": "乌鸦"
+  },
+  "char_parrot": {
+    "message": "鹦鹉"
+  },
+  "char_snowyowl": {
+    "message": "雪鸮"
+  },
+  "char_poisonfrog": {
+    "message": "箭毒蛙"
+  },
+  "char_goldfrog": {
+    "message": "雨蛙"
+  },
+  "char_whale": {
+    "message": "鲸鱼"
+  },
+  "char_dolphin": {
+    "message": "海豚"
+  },
+  "char_orca": {
+    "message": "虎鲸"
+  },
+  "char_shark": {
+    "message": "鲨鱼"
+  },
+  "char_ray": {
+    "message": "鳐鱼"
+  },
+  "char_angler": {
+    "message": "鮟鱇鱼"
+  },
+  "char_sealion": {
+    "message": "海狮"
+  },
+  "char_seal": {
+    "message": "海豹"
+  },
+  "char_walrus": {
+    "message": "海象"
+  },
+  "char_seaotter": {
+    "message": "海獭"
+  },
+  "char_manatee": {
+    "message": "海牛"
+  },
+  "char_goldfish": {
+    "message": "金鱼"
+  },
+  "char_clownfish": {
+    "message": "小丑鱼"
+  },
+  "char_tuna": {
+    "message": "金枪鱼"
+  },
+  "char_puffer": {
+    "message": "河豚"
+  },
+  "char_jellyfish": {
+    "message": "水母"
+  },
+  "char_octopus": {
+    "message": "章鱼"
+  },
+  "char_squid": {
+    "message": "鱿鱼"
+  },
+  "char_seaturtle": {
+    "message": "海龟"
+  },
+  "char_crab": {
+    "message": "螃蟹"
+  },
+  "char_car": {
+    "message": "汽车"
+  },
+  "char_taxi": {
+    "message": "出租车"
+  },
+  "char_police_car": {
+    "message": "警车"
+  },
+  "char_sportscar": {
+    "message": "跑车"
+  },
+  "char_bus": {
+    "message": "公交车"
+  },
+  "char_ambulance": {
+    "message": "救护车"
+  },
+  "char_firetruck": {
+    "message": "消防车"
+  },
+  "char_truck": {
+    "message": "卡车"
+  },
+  "char_tractor": {
+    "message": "拖拉机"
+  },
+  "char_bulldozer": {
+    "message": "推土机"
+  },
+  "char_tank": {
+    "message": "坦克"
+  },
+  "char_motorbike": {
+    "message": "摩托车"
+  },
+  "char_bicycle": {
+    "message": "自行车"
+  },
+  "char_scooter": {
+    "message": "踏板车"
+  },
+  "char_steam": {
+    "message": "蒸汽机车"
+  },
+  "char_shinkansen": {
+    "message": "新干线"
+  },
+  "char_racecar": {
+    "message": "赛车"
+  },
+  "char_icecream": {
+    "message": "冰淇淋车"
+  },
+  "char_cart": {
+    "message": "矿车"
+  },
+  "char_airplane": {
+    "message": "飞机"
+  },
+  "char_helicopter": {
+    "message": "直升机"
+  },
+  "char_ufo": {
+    "message": "UFO"
+  },
+  "char_rocket": {
+    "message": "火箭"
+  },
+  "char_balloon": {
+    "message": "热气球"
+  },
+  "char_airship": {
+    "message": "飞艇"
+  },
+  "char_paperplane": {
+    "message": "纸飞机"
+  },
+  "char_ship": {
+    "message": "轮船"
+  },
+  "char_submarine": {
+    "message": "潜水艇"
+  },
+  "char_wizard": {
+    "message": "魔法师"
+  },
+  "char_witch": {
+    "message": "魔女"
+  },
+  "char_knight": {
+    "message": "骑士"
+  },
+  "char_ninja": {
+    "message": "忍者"
+  },
+  "char_samurai": {
+    "message": "武士"
+  },
+  "char_princess": {
+    "message": "公主"
+  },
+  "char_king": {
+    "message": "国王"
+  },
+  "char_pirate": {
+    "message": "海盗"
+  },
+  "char_elf": {
+    "message": "精灵"
+  },
+  "char_robot": {
+    "message": "机器人"
+  },
+  "char_alien": {
+    "message": "外星人"
+  },
+  "char_vampire": {
+    "message": "吸血鬼"
+  },
+  "char_zombie": {
+    "message": "僵尸"
+  },
+  "char_skeleton": {
+    "message": "骷髅"
+  },
+  "char_mummy": {
+    "message": "木乃伊"
+  },
+  "char_oni": {
+    "message": "鬼"
+  },
+  "char_angel": {
+    "message": "天使"
+  },
+  "char_devil": {
+    "message": "小恶魔"
+  },
+  "char_fairy": {
+    "message": "妖精"
+  },
+  "char_catgirl": {
+    "message": "猫耳少女"
+  },
+  "char_kappa": {
+    "message": "河童"
+  },
+  "char_grim": {
+    "message": "死神"
+  },
+  "char_merman": {
+    "message": "波塞冬"
+  },
+  "char_snowboy": {
+    "message": "雪人"
+  },
+  "char_unicorn": {
+    "message": "独角兽"
+  },
+  "char_pegasus": {
+    "message": "飞马"
+  },
+  "char_dragon": {
+    "message": "龙"
+  },
+  "char_greendragon": {
+    "message": "绿龙"
+  },
+  "char_phoenix": {
+    "message": "凤凰"
+  },
+  "char_yeti": {
+    "message": "雪怪"
+  },
+  "char_golem": {
+    "message": "石魔像"
+  },
+  "char_kitsune": {
+    "message": "妖狐"
+  },
+  "char_nekomata": {
+    "message": "猫妖"
+  },
+  "char_nessie": {
+    "message": "尼斯湖水怪"
+  },
+  "char_slime": {
+    "message": "史莱姆"
+  },
+  "char_pinkslime": {
+    "message": "粉红史莱姆"
+  },
+  "char_ghost": {
+    "message": "幽灵"
+  },
+  "char_kraken": {
+    "message": "克拉肯"
+  },
+  "char_pumpkin": {
+    "message": "南瓜灯"
+  },
+  "genre_people": {
+    "message": "人物"
+  },
+  "genre_animals": {
+    "message": "动物"
+  },
+  "genre_birds": {
+    "message": "鸟类・爬行类"
+  },
+  "genre_sea": {
+    "message": "水中生物"
+  },
+  "genre_vehicles": {
+    "message": "交通工具"
+  },
+  "genre_fantasy": {
+    "message": "奇幻"
+  }
+}

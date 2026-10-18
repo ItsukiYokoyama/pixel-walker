@@ -1,0 +1,675 @@
+{
+  "extName": {
+    "message": "Pixel Walker"
+  },
+  "extDescription": {
+    "message": "픽셀 아트 캐릭터가 웹페이지의 제목과 문단을 발판 삼아 걸어 다니며 점프하거나 뛰어내립니다."
+  },
+  "enabledLabel": {
+    "message": "캐릭터 표시"
+  },
+  "sizeLabel": {
+    "message": "크기"
+  },
+  "sizeSmall": {
+    "message": "소"
+  },
+  "sizeMedium": {
+    "message": "중"
+  },
+  "sizeLarge": {
+    "message": "대"
+  },
+  "characterGroupLabel": {
+    "message": "캐릭터"
+  },
+  "contactLabel": {
+    "message": "캐릭터 요청 · 문의"
+  },
+  "contactUrl": {
+    "message": "https://ditsuki.com/ko/contact"
+  },
+  "releasesUrl": {
+    "message": "https://ditsuki.com/ko/pixel-walker/releases"
+  },
+  "updateAvailable": {
+    "message": "새 버전이 출시되었습니다. $P1$에서 프로그램을 최신으로 업데이트할 수 있습니다.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "updateLink": {
+    "message": "여기"
+  },
+  "updateVersions": {
+    "message": "(현재: $P1$ → 최신: $P2$)",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "updateBadgeLabel": {
+    "message": "새 버전이 있습니다"
+  },
+  "updateCheckLabel": {
+    "message": "새 버전 확인하기"
+  },
+  "controlLabel": {
+    "message": "캐릭터 조작하기"
+  },
+  "controlHelp": {
+    "message": "[[←]][[→]] 이동  [[C]] 점프(공중에서 [[C]]를 한 번 더 누르면 이단 점프)  [[↓]]+[[C]] 내려가기  [[X]] 동작(자기·앉기·춤추기). 날거나 헤엄치는 캐릭터는 [[↑]][[↓]][[←]][[→]]로 이동. 페이지를 클릭한 뒤 조작하세요"
+  },
+  "char_adventurer": {
+    "message": "모험가"
+  },
+  "char_boy": {
+    "message": "남자아이"
+  },
+  "char_girl": {
+    "message": "여자아이"
+  },
+  "char_salaryman": {
+    "message": "회사원"
+  },
+  "char_office_lady": {
+    "message": "여성 회사원"
+  },
+  "char_chef": {
+    "message": "요리사"
+  },
+  "char_doctor": {
+    "message": "의사"
+  },
+  "char_nurse": {
+    "message": "간호사"
+  },
+  "char_police": {
+    "message": "경찰관"
+  },
+  "char_firefighter": {
+    "message": "소방관"
+  },
+  "char_builder": {
+    "message": "목수"
+  },
+  "char_astronaut": {
+    "message": "우주비행사"
+  },
+  "char_cowboy": {
+    "message": "카우보이"
+  },
+  "char_farmer": {
+    "message": "농부"
+  },
+  "char_baseball": {
+    "message": "야구 선수"
+  },
+  "char_student": {
+    "message": "학생"
+  },
+  "char_gakuran": {
+    "message": "교복 학생"
+  },
+  "char_grandpa": {
+    "message": "할아버지"
+  },
+  "char_grandma": {
+    "message": "할머니"
+  },
+  "char_baby": {
+    "message": "아기"
+  },
+  "char_idol": {
+    "message": "아이돌"
+  },
+  "char_painter": {
+    "message": "화가"
+  },
+  "char_detective": {
+    "message": "탐정"
+  },
+  "char_scientist": {
+    "message": "과학자"
+  },
+  "char_mailman": {
+    "message": "우체부"
+  },
+  "char_santa": {
+    "message": "산타클로스"
+  },
+  "char_swimmer": {
+    "message": "해수욕객"
+  },
+  "char_punk": {
+    "message": "로커"
+  },
+  "char_cheer": {
+    "message": "치어리더"
+  },
+  "char_diver": {
+    "message": "다이버"
+  },
+  "char_dog": {
+    "message": "개"
+  },
+  "char_wolf": {
+    "message": "늑대"
+  },
+  "char_fox": {
+    "message": "여우"
+  },
+  "char_tanuki": {
+    "message": "너구리"
+  },
+  "char_cat": {
+    "message": "고양이"
+  },
+  "char_lion": {
+    "message": "사자"
+  },
+  "char_tiger": {
+    "message": "호랑이"
+  },
+  "char_cheetah": {
+    "message": "치타"
+  },
+  "char_leopard": {
+    "message": "표범"
+  },
+  "char_jaguar": {
+    "message": "재규어"
+  },
+  "char_hyena": {
+    "message": "하이에나"
+  },
+  "char_meerkat": {
+    "message": "미어캣"
+  },
+  "char_bear": {
+    "message": "곰"
+  },
+  "char_polar": {
+    "message": "북극곰"
+  },
+  "char_panda": {
+    "message": "판다"
+  },
+  "char_koala": {
+    "message": "코알라"
+  },
+  "char_kangaroo": {
+    "message": "캥거루"
+  },
+  "char_horse": {
+    "message": "말"
+  },
+  "char_zebra": {
+    "message": "얼룩말"
+  },
+  "char_cow": {
+    "message": "소"
+  },
+  "char_sheep": {
+    "message": "양"
+  },
+  "char_goat": {
+    "message": "염소"
+  },
+  "char_alpaca": {
+    "message": "알파카"
+  },
+  "char_camel": {
+    "message": "낙타"
+  },
+  "char_pig": {
+    "message": "돼지"
+  },
+  "char_boar": {
+    "message": "멧돼지"
+  },
+  "char_deer": {
+    "message": "사슴"
+  },
+  "char_giraffe": {
+    "message": "기린"
+  },
+  "char_elephant": {
+    "message": "코끼리"
+  },
+  "char_hippo": {
+    "message": "하마"
+  },
+  "char_rhino": {
+    "message": "코뿔소"
+  },
+  "char_rabbit": {
+    "message": "토끼"
+  },
+  "char_hamster": {
+    "message": "햄스터"
+  },
+  "char_guinea": {
+    "message": "기니피그"
+  },
+  "char_squirrel": {
+    "message": "다람쥐"
+  },
+  "char_hedgehog": {
+    "message": "고슴도치"
+  },
+  "char_ferret": {
+    "message": "페럿"
+  },
+  "char_otter": {
+    "message": "수달"
+  },
+  "char_beaver": {
+    "message": "비버"
+  },
+  "char_monkey": {
+    "message": "원숭이"
+  },
+  "char_chimp": {
+    "message": "침팬지"
+  },
+  "char_orangutan": {
+    "message": "오랑우탄"
+  },
+  "char_gorilla": {
+    "message": "고릴라"
+  },
+  "char_blackcat": {
+    "message": "검은 고양이"
+  },
+  "char_whitecat": {
+    "message": "흰 고양이"
+  },
+  "char_shiba": {
+    "message": "시바견"
+  },
+  "char_dalmatian": {
+    "message": "달마티안"
+  },
+  "char_blacklab": {
+    "message": "블랙 래브라도"
+  },
+  "char_panther": {
+    "message": "흑표범"
+  },
+  "char_snowleopard": {
+    "message": "눈표범"
+  },
+  "char_whitetiger": {
+    "message": "백호"
+  },
+  "char_arcticfox": {
+    "message": "북극여우"
+  },
+  "char_redpanda": {
+    "message": "레서판다"
+  },
+  "char_donkey": {
+    "message": "당나귀"
+  },
+  "char_pony": {
+    "message": "백마"
+  },
+  "char_mouse": {
+    "message": "쥐"
+  },
+  "char_blacksheep": {
+    "message": "검은 양"
+  },
+  "char_whiterabbit": {
+    "message": "흰 토끼"
+  },
+  "char_reindeer": {
+    "message": "순록"
+  },
+  "char_macaque": {
+    "message": "일본원숭이"
+  },
+  "char_blackbear": {
+    "message": "반달가슴곰"
+  },
+  "char_duck": {
+    "message": "오리"
+  },
+  "char_chick": {
+    "message": "병아리"
+  },
+  "char_owl": {
+    "message": "부엉이"
+  },
+  "char_eagle": {
+    "message": "독수리"
+  },
+  "char_hawk": {
+    "message": "매"
+  },
+  "char_ostrich": {
+    "message": "타조"
+  },
+  "char_flamingo": {
+    "message": "플라밍고"
+  },
+  "char_penguin": {
+    "message": "펭귄"
+  },
+  "char_croc": {
+    "message": "악어"
+  },
+  "char_turtle": {
+    "message": "거북이"
+  },
+  "char_lizard": {
+    "message": "도마뱀"
+  },
+  "char_snake": {
+    "message": "뱀"
+  },
+  "char_frog": {
+    "message": "개구리"
+  },
+  "char_crow": {
+    "message": "까마귀"
+  },
+  "char_parrot": {
+    "message": "앵무새"
+  },
+  "char_snowyowl": {
+    "message": "흰올빼미"
+  },
+  "char_poisonfrog": {
+    "message": "독화살개구리"
+  },
+  "char_goldfrog": {
+    "message": "청개구리"
+  },
+  "char_whale": {
+    "message": "고래"
+  },
+  "char_dolphin": {
+    "message": "돌고래"
+  },
+  "char_orca": {
+    "message": "범고래"
+  },
+  "char_shark": {
+    "message": "상어"
+  },
+  "char_ray": {
+    "message": "가오리"
+  },
+  "char_angler": {
+    "message": "아귀"
+  },
+  "char_sealion": {
+    "message": "바다사자"
+  },
+  "char_seal": {
+    "message": "물범"
+  },
+  "char_walrus": {
+    "message": "바다코끼리"
+  },
+  "char_seaotter": {
+    "message": "해달"
+  },
+  "char_manatee": {
+    "message": "매너티"
+  },
+  "char_goldfish": {
+    "message": "금붕어"
+  },
+  "char_clownfish": {
+    "message": "흰동가리"
+  },
+  "char_tuna": {
+    "message": "참치"
+  },
+  "char_puffer": {
+    "message": "복어"
+  },
+  "char_jellyfish": {
+    "message": "해파리"
+  },
+  "char_octopus": {
+    "message": "문어"
+  },
+  "char_squid": {
+    "message": "오징어"
+  },
+  "char_seaturtle": {
+    "message": "바다거북"
+  },
+  "char_crab": {
+    "message": "게"
+  },
+  "char_car": {
+    "message": "자동차"
+  },
+  "char_taxi": {
+    "message": "택시"
+  },
+  "char_police_car": {
+    "message": "경찰차"
+  },
+  "char_sportscar": {
+    "message": "스포츠카"
+  },
+  "char_bus": {
+    "message": "버스"
+  },
+  "char_ambulance": {
+    "message": "구급차"
+  },
+  "char_firetruck": {
+    "message": "소방차"
+  },
+  "char_truck": {
+    "message": "트럭"
+  },
+  "char_tractor": {
+    "message": "트랙터"
+  },
+  "char_bulldozer": {
+    "message": "불도저"
+  },
+  "char_tank": {
+    "message": "탱크"
+  },
+  "char_motorbike": {
+    "message": "오토바이"
+  },
+  "char_bicycle": {
+    "message": "자전거"
+  },
+  "char_scooter": {
+    "message": "스쿠터"
+  },
+  "char_steam": {
+    "message": "증기기관차"
+  },
+  "char_shinkansen": {
+    "message": "신칸센"
+  },
+  "char_racecar": {
+    "message": "레이싱카"
+  },
+  "char_icecream": {
+    "message": "아이스크림 트럭"
+  },
+  "char_cart": {
+    "message": "광차"
+  },
+  "char_airplane": {
+    "message": "비행기"
+  },
+  "char_helicopter": {
+    "message": "헬리콥터"
+  },
+  "char_ufo": {
+    "message": "UFO"
+  },
+  "char_rocket": {
+    "message": "로켓"
+  },
+  "char_balloon": {
+    "message": "열기구"
+  },
+  "char_airship": {
+    "message": "비행선"
+  },
+  "char_paperplane": {
+    "message": "종이비행기"
+  },
+  "char_ship": {
+    "message": "배"
+  },
+  "char_submarine": {
+    "message": "잠수함"
+  },
+  "char_wizard": {
+    "message": "마법사"
+  },
+  "char_witch": {
+    "message": "마녀"
+  },
+  "char_knight": {
+    "message": "기사"
+  },
+  "char_ninja": {
+    "message": "닌자"
+  },
+  "char_samurai": {
+    "message": "사무라이"
+  },
+  "char_princess": {
+    "message": "공주"
+  },
+  "char_king": {
+    "message": "왕"
+  },
+  "char_pirate": {
+    "message": "해적"
+  },
+  "char_elf": {
+    "message": "엘프"
+  },
+  "char_robot": {
+    "message": "로봇"
+  },
+  "char_alien": {
+    "message": "외계인"
+  },
+  "char_vampire": {
+    "message": "뱀파이어"
+  },
+  "char_zombie": {
+    "message": "좀비"
+  },
+  "char_skeleton": {
+    "message": "해골"
+  },
+  "char_mummy": {
+    "message": "미라"
+  },
+  "char_oni": {
+    "message": "도깨비"
+  },
+  "char_angel": {
+    "message": "천사"
+  },
+  "char_devil": {
+    "message": "꼬마 악마"
+  },
+  "char_fairy": {
+    "message": "요정"
+  },
+  "char_catgirl": {
+    "message": "고양이 귀 소녀"
+  },
+  "char_kappa": {
+    "message": "갓파"
+  },
+  "char_grim": {
+    "message": "사신"
+  },
+  "char_merman": {
+    "message": "포세이돈"
+  },
+  "char_snowboy": {
+    "message": "눈사람"
+  },
+  "char_unicorn": {
+    "message": "유니콘"
+  },
+  "char_pegasus": {
+    "message": "페가수스"
+  },
+  "char_dragon": {
+    "message": "드래곤"
+  },
+  "char_greendragon": {
+    "message": "그린 드래곤"
+  },
+  "char_phoenix": {
+    "message": "불사조"
+  },
+  "char_yeti": {
+    "message": "예티"
+  },
+  "char_golem": {
+    "message": "골렘"
+  },
+  "char_kitsune": {
+    "message": "요호"
+  },
+  "char_nekomata": {
+    "message": "요괴 고양이"
+  },
+  "char_nessie": {
+    "message": "네시"
+  },
+  "char_slime": {
+    "message": "슬라임"
+  },
+  "char_pinkslime": {
+    "message": "핑크 슬라임"
+  },
+  "char_ghost": {
+    "message": "유령"
+  },
+  "char_kraken": {
+    "message": "크라켄"
+  },
+  "char_pumpkin": {
+    "message": "호박 유령"
+  },
+  "genre_people": {
+    "message": "사람"
+  },
+  "genre_animals": {
+    "message": "동물"
+  },
+  "genre_birds": {
+    "message": "새·파충류"
+  },
+  "genre_sea": {
+    "message": "바다 생물"
+  },
+  "genre_vehicles": {
+    "message": "탈것"
+  },
+  "genre_fantasy": {
+    "message": "판타지"
+  }
+}

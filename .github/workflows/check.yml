@@ -1,0 +1,41 @@
+name: Check
+
+# プルリクエストごとに、絵データの作り直し忘れ・JavaScript と JSON の壊れを確かめる
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: 絵データを作り直して、コミットされたものと同じか確かめる / Rebuild character data
+        run: |
+          python3 tools/build.py
+          if [ -n "$(git status --porcelain -- chars chars.js _locales)" ]; then
+            git status --short -- chars chars.js _locales
+            echo "::error::生成されたファイルが古いままです。python3 tools/build.py を実行して、chars/・chars.js・_locales/ の変更もコミットしてください。 / Generated files are out of date. Run python3 tools/build.py and commit the changes."
+            exit 1
+          fi
+
+      - name: JavaScript の構文 / JavaScript syntax
+        run: for f in *.js; do node --check "$f"; done
+
+      - name: JSON の形式 / JSON format
+        run: |
+          python3 - <<'PY'
+          import glob, json
+          files = ['manifest.json', *glob.glob('_locales/*/messages.json'), *glob.glob('chars/*.json')]
+          for f in files:
+              json.load(open(f, encoding='utf-8'))
+          print(len(files), 'JSON files OK')
+          PY

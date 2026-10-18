@@ -1,0 +1,36 @@
+name: キャラクターの要望 / Character request
+description: 追加してほしいキャラクターを提案する / Suggest a new character
+labels: [character]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: キャラクター / Character
+      description: 例 / e.g. 消防犬、パン屋さん、UFO / fire dog, baker, UFO
+    validations:
+      required: true
+  - type: dropdown
+    id: genre
+    attributes:
+      label: ジャンル / Genre
+      options:
+        - 人 / People
+        - 動物 / Animals
+        - 鳥・は虫類 / Birds & Reptiles
+        - 水の生き物 / Sea Life
+        - 乗り物 / Vehicles
+        - ファンタジー / Fantasy
+    validations:
+      required: true
+  - type: textarea
+    id: look
+    attributes:
+      label: 見た目 / Appearance
+      description: 色・服装・持ち物など、どんな見た目がよいか / Colors, clothes, items, etc.
+  - type: checkboxes
+    id: original
+    attributes:
+      label: 確認 / Confirmation
+      options:
+        - label: アニメ・ゲームなど既存の作品のキャラクターではありません（著作権の都合で受け付けられません） / This is not a character from an existing work (anime, games, etc.), which we can't accept for copyright reasons
+          required: true

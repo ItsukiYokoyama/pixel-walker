@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Pixel Walker キャラクター一覧</title>
+<style>
+  body { margin: 0; padding: 24px; background: #f6f4ef; color: #222; font: 14px/1.5 "Noto Sans CJK JP", "Hiragino Sans", "Yu Gothic", sans-serif; }
+  h1 { margin: 0 0 4px; font-size: 24px; }
+  .sub { margin: 0 0 20px; color: #6b665a; }
+  #list { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .card { background: #fff; border: 1px solid #e0dccf; border-radius: 10px; padding: 10px; text-align: center; }
+  .stage { height: 110px; display: flex; align-items: flex-end; justify-content: center; }
+  .stage canvas { image-rendering: pixelated; max-width: 100%; max-height: 100%; }
+  .name { margin-top: 6px; font-weight: 700; }
+  .id { color: #8a8578; font-size: 12px; font-family: monospace; }
+  .no { color: #b3ad9d; font-size: 11px; }
+</style>
+</head>
+<body>
+<h1>Pixel Walker キャラクター一覧</h1>
+<p class="sub" id="count"></p>
+<div id="list"></div>
+<script src="chars.js"></script>
+<script src="characters.js"></script>
+<script src="character-list.js"></script>
+</body>
+</html>

@@ -1,0 +1,675 @@
+{
+  "extName": {
+    "message": "Pixel Walker"
+  },
+  "extDescription": {
+    "message": "Un personaje en pixel art camina sobre los títulos y párrafos de cualquier página web, saltando y bajando entre líneas."
+  },
+  "enabledLabel": {
+    "message": "Mostrar personaje"
+  },
+  "sizeLabel": {
+    "message": "Tamaño"
+  },
+  "sizeSmall": {
+    "message": "Pequeño"
+  },
+  "sizeMedium": {
+    "message": "Mediano"
+  },
+  "sizeLarge": {
+    "message": "Grande"
+  },
+  "characterGroupLabel": {
+    "message": "Personaje"
+  },
+  "contactLabel": {
+    "message": "Pedir un personaje / Contacto"
+  },
+  "contactUrl": {
+    "message": "https://ditsuki.com/es_419/contact"
+  },
+  "releasesUrl": {
+    "message": "https://ditsuki.com/es_419/pixel-walker/releases"
+  },
+  "updateAvailable": {
+    "message": "Se publicó una versión nueva. Puedes actualizar el programa $P1$.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "updateLink": {
+    "message": "aquí"
+  },
+  "updateVersions": {
+    "message": "(actual: $P1$ → más reciente: $P2$)",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "updateBadgeLabel": {
+    "message": "Hay una versión nueva"
+  },
+  "updateCheckLabel": {
+    "message": "Buscar versiones nuevas"
+  },
+  "controlLabel": {
+    "message": "Controlar al personaje"
+  },
+  "controlHelp": {
+    "message": "[[←]][[→]] moverse  [[C]] saltar (presiona [[C]] otra vez en el aire para un doble salto)  [[↓]]+[[C]] bajar  [[X]] acción (dormir, sentarse, bailar). Los personajes que vuelan o nadan se mueven con [[↑]][[↓]][[←]][[→]]. Haz clic en la página antes de usar las teclas"
+  },
+  "char_adventurer": {
+    "message": "Aventurero"
+  },
+  "char_boy": {
+    "message": "Niño"
+  },
+  "char_girl": {
+    "message": "Niña"
+  },
+  "char_salaryman": {
+    "message": "Oficinista"
+  },
+  "char_office_lady": {
+    "message": "Ejecutiva"
+  },
+  "char_chef": {
+    "message": "Chef"
+  },
+  "char_doctor": {
+    "message": "Médico"
+  },
+  "char_nurse": {
+    "message": "Enfermera"
+  },
+  "char_police": {
+    "message": "Policía"
+  },
+  "char_firefighter": {
+    "message": "Bombero"
+  },
+  "char_builder": {
+    "message": "Obrero"
+  },
+  "char_astronaut": {
+    "message": "Astronauta"
+  },
+  "char_cowboy": {
+    "message": "Vaquero"
+  },
+  "char_farmer": {
+    "message": "Granjero"
+  },
+  "char_baseball": {
+    "message": "Beisbolista"
+  },
+  "char_student": {
+    "message": "Estudiante"
+  },
+  "char_gakuran": {
+    "message": "Colegial"
+  },
+  "char_grandpa": {
+    "message": "Abuelo"
+  },
+  "char_grandma": {
+    "message": "Abuela"
+  },
+  "char_baby": {
+    "message": "Bebé"
+  },
+  "char_idol": {
+    "message": "Ídolo pop"
+  },
+  "char_painter": {
+    "message": "Pintor"
+  },
+  "char_detective": {
+    "message": "Detective"
+  },
+  "char_scientist": {
+    "message": "Científico"
+  },
+  "char_mailman": {
+    "message": "Cartero"
+  },
+  "char_santa": {
+    "message": "Santa Claus"
+  },
+  "char_swimmer": {
+    "message": "Bañista"
+  },
+  "char_punk": {
+    "message": "Rockero"
+  },
+  "char_cheer": {
+    "message": "Porrista"
+  },
+  "char_diver": {
+    "message": "Buzo"
+  },
+  "char_dog": {
+    "message": "Perro"
+  },
+  "char_wolf": {
+    "message": "Lobo"
+  },
+  "char_fox": {
+    "message": "Zorro"
+  },
+  "char_tanuki": {
+    "message": "Tanuki"
+  },
+  "char_cat": {
+    "message": "Gato"
+  },
+  "char_lion": {
+    "message": "León"
+  },
+  "char_tiger": {
+    "message": "Tigre"
+  },
+  "char_cheetah": {
+    "message": "Guepardo"
+  },
+  "char_leopard": {
+    "message": "Leopardo"
+  },
+  "char_jaguar": {
+    "message": "Jaguar"
+  },
+  "char_hyena": {
+    "message": "Hiena"
+  },
+  "char_meerkat": {
+    "message": "Suricata"
+  },
+  "char_bear": {
+    "message": "Oso"
+  },
+  "char_polar": {
+    "message": "Oso polar"
+  },
+  "char_panda": {
+    "message": "Panda"
+  },
+  "char_koala": {
+    "message": "Koala"
+  },
+  "char_kangaroo": {
+    "message": "Canguro"
+  },
+  "char_horse": {
+    "message": "Caballo"
+  },
+  "char_zebra": {
+    "message": "Cebra"
+  },
+  "char_cow": {
+    "message": "Vaca"
+  },
+  "char_sheep": {
+    "message": "Oveja"
+  },
+  "char_goat": {
+    "message": "Cabra"
+  },
+  "char_alpaca": {
+    "message": "Alpaca"
+  },
+  "char_camel": {
+    "message": "Camello"
+  },
+  "char_pig": {
+    "message": "Cerdo"
+  },
+  "char_boar": {
+    "message": "Jabalí"
+  },
+  "char_deer": {
+    "message": "Ciervo"
+  },
+  "char_giraffe": {
+    "message": "Jirafa"
+  },
+  "char_elephant": {
+    "message": "Elefante"
+  },
+  "char_hippo": {
+    "message": "Hipopótamo"
+  },
+  "char_rhino": {
+    "message": "Rinoceronte"
+  },
+  "char_rabbit": {
+    "message": "Conejo"
+  },
+  "char_hamster": {
+    "message": "Hamster"
+  },
+  "char_guinea": {
+    "message": "Cobaya"
+  },
+  "char_squirrel": {
+    "message": "Ardilla"
+  },
+  "char_hedgehog": {
+    "message": "Erizo"
+  },
+  "char_ferret": {
+    "message": "Hurón"
+  },
+  "char_otter": {
+    "message": "Nutria"
+  },
+  "char_beaver": {
+    "message": "Castor"
+  },
+  "char_monkey": {
+    "message": "Mono"
+  },
+  "char_chimp": {
+    "message": "Chimpancé"
+  },
+  "char_orangutan": {
+    "message": "Orangután"
+  },
+  "char_gorilla": {
+    "message": "Gorila"
+  },
+  "char_blackcat": {
+    "message": "Gato negro"
+  },
+  "char_whitecat": {
+    "message": "Gato blanco"
+  },
+  "char_shiba": {
+    "message": "Shiba Inu"
+  },
+  "char_dalmatian": {
+    "message": "Dálmata"
+  },
+  "char_blacklab": {
+    "message": "Labrador negro"
+  },
+  "char_panther": {
+    "message": "Pantera negra"
+  },
+  "char_snowleopard": {
+    "message": "Leopardo de las nieves"
+  },
+  "char_whitetiger": {
+    "message": "Tigre blanco"
+  },
+  "char_arcticfox": {
+    "message": "Zorro ártico"
+  },
+  "char_redpanda": {
+    "message": "Panda rojo"
+  },
+  "char_donkey": {
+    "message": "Burro"
+  },
+  "char_pony": {
+    "message": "Caballo blanco"
+  },
+  "char_mouse": {
+    "message": "Ratón"
+  },
+  "char_blacksheep": {
+    "message": "Oveja negra"
+  },
+  "char_whiterabbit": {
+    "message": "Conejo blanco"
+  },
+  "char_reindeer": {
+    "message": "Reno"
+  },
+  "char_macaque": {
+    "message": "Macaco japonés"
+  },
+  "char_blackbear": {
+    "message": "Oso negro asiático"
+  },
+  "char_duck": {
+    "message": "Pato"
+  },
+  "char_chick": {
+    "message": "Pollito"
+  },
+  "char_owl": {
+    "message": "Búho"
+  },
+  "char_eagle": {
+    "message": "Águila"
+  },
+  "char_hawk": {
+    "message": "Halcón"
+  },
+  "char_ostrich": {
+    "message": "Avestruz"
+  },
+  "char_flamingo": {
+    "message": "Flamenco"
+  },
+  "char_penguin": {
+    "message": "Pingüino"
+  },
+  "char_croc": {
+    "message": "Cocodrilo"
+  },
+  "char_turtle": {
+    "message": "Tortuga"
+  },
+  "char_lizard": {
+    "message": "Lagartija"
+  },
+  "char_snake": {
+    "message": "Serpiente"
+  },
+  "char_frog": {
+    "message": "Rana"
+  },
+  "char_crow": {
+    "message": "Cuervo"
+  },
+  "char_parrot": {
+    "message": "Loro"
+  },
+  "char_snowyowl": {
+    "message": "Búho nival"
+  },
+  "char_poisonfrog": {
+    "message": "Rana flecha"
+  },
+  "char_goldfrog": {
+    "message": "Ranita de árbol"
+  },
+  "char_whale": {
+    "message": "Ballena"
+  },
+  "char_dolphin": {
+    "message": "Delfín"
+  },
+  "char_orca": {
+    "message": "Orca"
+  },
+  "char_shark": {
+    "message": "Tiburón"
+  },
+  "char_ray": {
+    "message": "Raya"
+  },
+  "char_angler": {
+    "message": "Pez pescador"
+  },
+  "char_sealion": {
+    "message": "León marino"
+  },
+  "char_seal": {
+    "message": "Foca"
+  },
+  "char_walrus": {
+    "message": "Morsa"
+  },
+  "char_seaotter": {
+    "message": "Nutria marina"
+  },
+  "char_manatee": {
+    "message": "Manatí"
+  },
+  "char_goldfish": {
+    "message": "Pez dorado"
+  },
+  "char_clownfish": {
+    "message": "Pez payaso"
+  },
+  "char_tuna": {
+    "message": "Atún"
+  },
+  "char_puffer": {
+    "message": "Pez globo"
+  },
+  "char_jellyfish": {
+    "message": "Medusa"
+  },
+  "char_octopus": {
+    "message": "Pulpo"
+  },
+  "char_squid": {
+    "message": "Calamar"
+  },
+  "char_seaturtle": {
+    "message": "Tortuga marina"
+  },
+  "char_crab": {
+    "message": "Cangrejo"
+  },
+  "char_car": {
+    "message": "Auto"
+  },
+  "char_taxi": {
+    "message": "Taxi"
+  },
+  "char_police_car": {
+    "message": "Patrulla"
+  },
+  "char_sportscar": {
+    "message": "Deportivo"
+  },
+  "char_bus": {
+    "message": "Autobús"
+  },
+  "char_ambulance": {
+    "message": "Ambulancia"
+  },
+  "char_firetruck": {
+    "message": "Camión de bomberos"
+  },
+  "char_truck": {
+    "message": "Camión"
+  },
+  "char_tractor": {
+    "message": "Tractor"
+  },
+  "char_bulldozer": {
+    "message": "Excavadora"
+  },
+  "char_tank": {
+    "message": "Tanque"
+  },
+  "char_motorbike": {
+    "message": "Moto"
+  },
+  "char_bicycle": {
+    "message": "Bicicleta"
+  },
+  "char_scooter": {
+    "message": "Scooter"
+  },
+  "char_steam": {
+    "message": "Locomotora de vapor"
+  },
+  "char_shinkansen": {
+    "message": "Tren bala"
+  },
+  "char_racecar": {
+    "message": "Auto de carreras"
+  },
+  "char_icecream": {
+    "message": "Camión de helados"
+  },
+  "char_cart": {
+    "message": "Vagoneta"
+  },
+  "char_airplane": {
+    "message": "Avión"
+  },
+  "char_helicopter": {
+    "message": "Helicóptero"
+  },
+  "char_ufo": {
+    "message": "OVNI"
+  },
+  "char_rocket": {
+    "message": "Cohete"
+  },
+  "char_balloon": {
+    "message": "Globo aerostático"
+  },
+  "char_airship": {
+    "message": "Dirigible"
+  },
+  "char_paperplane": {
+    "message": "Avión de papel"
+  },
+  "char_ship": {
+    "message": "Barco"
+  },
+  "char_submarine": {
+    "message": "Submarino"
+  },
+  "char_wizard": {
+    "message": "Mago"
+  },
+  "char_witch": {
+    "message": "Bruja"
+  },
+  "char_knight": {
+    "message": "Caballero"
+  },
+  "char_ninja": {
+    "message": "Ninja"
+  },
+  "char_samurai": {
+    "message": "Samurái"
+  },
+  "char_princess": {
+    "message": "Princesa"
+  },
+  "char_king": {
+    "message": "Rey"
+  },
+  "char_pirate": {
+    "message": "Pirata"
+  },
+  "char_elf": {
+    "message": "Elfo"
+  },
+  "char_robot": {
+    "message": "Robot"
+  },
+  "char_alien": {
+    "message": "Extraterrestre"
+  },
+  "char_vampire": {
+    "message": "Vampiro"
+  },
+  "char_zombie": {
+    "message": "Zombi"
+  },
+  "char_skeleton": {
+    "message": "Esqueleto"
+  },
+  "char_mummy": {
+    "message": "Momia"
+  },
+  "char_oni": {
+    "message": "Oni"
+  },
+  "char_angel": {
+    "message": "Ángel"
+  },
+  "char_devil": {
+    "message": "Diablillo"
+  },
+  "char_fairy": {
+    "message": "Hada"
+  },
+  "char_catgirl": {
+    "message": "Chica gato"
+  },
+  "char_kappa": {
+    "message": "Kappa"
+  },
+  "char_grim": {
+    "message": "La Muerte"
+  },
+  "char_merman": {
+    "message": "Poseidón"
+  },
+  "char_snowboy": {
+    "message": "Muñeco de nieve"
+  },
+  "char_unicorn": {
+    "message": "Unicornio"
+  },
+  "char_pegasus": {
+    "message": "Pegaso"
+  },
+  "char_dragon": {
+    "message": "Dragón"
+  },
+  "char_greendragon": {
+    "message": "Dragón verde"
+  },
+  "char_phoenix": {
+    "message": "Fénix"
+  },
+  "char_yeti": {
+    "message": "Yeti"
+  },
+  "char_golem": {
+    "message": "Gólem"
+  },
+  "char_kitsune": {
+    "message": "Zorro espíritu"
+  },
+  "char_nekomata": {
+    "message": "Gato fantasma"
+  },
+  "char_nessie": {
+    "message": "Nessie"
+  },
+  "char_slime": {
+    "message": "Slime"
+  },
+  "char_pinkslime": {
+    "message": "Slime rosa"
+  },
+  "char_ghost": {
+    "message": "Fantasma"
+  },
+  "char_kraken": {
+    "message": "Kraken"
+  },
+  "char_pumpkin": {
+    "message": "Calabaza fantasma"
+  },
+  "genre_people": {
+    "message": "Personas"
+  },
+  "genre_animals": {
+    "message": "Animales"
+  },
+  "genre_birds": {
+    "message": "Aves y reptiles"
+  },
+  "genre_sea": {
+    "message": "Vida marina"
+  },
+  "genre_vehicles": {
+    "message": "Vehículos"
+  },
+  "genre_fantasy": {
+    "message": "Fantasía"
+  }
+}

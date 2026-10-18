@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 372px; margin: 12px; font: 14px sans-serif; color: #222; }
+    header { display: flex; align-items: center; justify-content: space-between; margin: 0 0 10px; }
+    h1 { font-size: 15px; margin: 0; }
+    /* 新しいバージョンのお知らせ: 「！」にマウスを乗せる・フォーカスする・クリックすると吹き出しを開く */
+    #update { position: relative; }
+    #update[hidden] { display: none; }
+    #update-badge {
+      width: 22px; height: 22px; padding: 0; border: none; border-radius: 50%; background: #e8590c;
+      color: #fff; font: bold 14px/22px sans-serif; text-align: center; cursor: pointer;
+    }
+    #update-bubble {
+      display: none; position: absolute; top: 30px; right: -4px; z-index: 1; width: 240px; padding: 10px 12px;
+      border: 1px solid #e8590c; border-radius: 8px; background: #fff8f3; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-size: 12px; line-height: 1.6;
+    }
+    /* 吹き出しの上の三角 */
+    #update-bubble::before {
+      content: ''; position: absolute; top: -7px; right: 10px; width: 12px; height: 12px;
+      border-left: 1px solid #e8590c; border-top: 1px solid #e8590c; background: #fff8f3; transform: rotate(45deg);
+    }
+    #update:hover #update-bubble, #update:focus-within #update-bubble, #update.open #update-bubble { display: block; }
+    #update-bubble a { color: #c2410c; font-weight: bold; }
+    #update-versions { display: block; color: #777; margin-top: 2px; }
+    #update-check-row { display: block; margin-top: 10px; font-size: 12px; color: #555; }
+    #control-help { margin: -4px 0 6px 22px; font-size: 11px; color: #666; line-height: 1.5; }
+    #control-help[hidden] { display: none; }
+    #control-help kbd {
+      display: inline-block; min-width: 14px; padding: 0 3px; border: 1px solid #ccc; border-bottom-width: 2px;
+      border-radius: 3px; background: #fafafa; font: 11px/14px sans-serif; text-align: center;
+    }
+    .row { display: flex; align-items: center; justify-content: space-between; margin: 8px 0; }
+    #tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+    #tabs button {
+      flex: 1 1 auto; padding: 5px 6px; border: 1px solid #d5d5d5; border-radius: 999px; background: #fafafa;
+      font: 12px sans-serif; color: #444; cursor: pointer; white-space: nowrap;
+    }
+    #tabs button:hover { background: #f0f4ff; }
+    #tabs button[aria-selected="true"] { border-color: #3b6ef5; background: #3b6ef5; color: #fff; }
+    #list {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+      height: 340px; overflow-y: auto; padding: 2px; margin-top: 8px; align-content: start;
+    }
+    .card[hidden] { display: none; }
+    #contact { display: block; margin-top: 10px; font-size: 12px; text-align: right; color: #3b6ef5; }
+    .card {
+      position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      height: 84px; padding: 4px 2px 3px; border: 1px solid #d5d5d5; border-radius: 6px; cursor: pointer;
+      background: #fafafa; user-select: none;
+    }
+    .card:hover { background: #f0f4ff; }
+    .card input { position: absolute; top: 4px; left: 4px; margin: 0; cursor: pointer; }
+    .card canvas { image-rendering: pixelated; flex: 1; min-height: 0; max-width: 100%; object-fit: contain; }
+    .card span { font-size: 11px; margin-top: 2px; white-space: nowrap; }
+    .card:has(input:checked) { border-color: #3b6ef5; background: #e8efff; box-shadow: 0 0 0 1px #3b6ef5; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="app-title">Pixel Walker</h1>
+    <div id="update" hidden>
+      <button type="button" id="update-badge" aria-describedby="update-bubble">!</button>
+      <div id="update-bubble" role="tooltip"></div>
+    </div>
+  </header>
+  <div class="row">
+    <label><input type="checkbox" id="enabled"> <span id="enabled-label"></span></label>
+    <label><span id="size-label"></span>
+      <select id="scale">
+        <option id="size-small" value="3"></option>
+        <option id="size-medium" value="4"></option>
+        <option id="size-large" value="6"></option>
+      </select>
+    </label>
+  </div>
+  <div class="row">
+    <label><input type="checkbox" id="control"> <span id="control-label"></span></label>
+  </div>
+  <div id="control-help" hidden></div>
+  <div id="tabs" role="tablist"></div>
+  <div id="list" role="radiogroup" aria-label=""></div>
+  <label id="update-check-row"><input type="checkbox" id="update-check"> <span id="update-check-label"></span></label>
+  <a id="contact" target="_blank" rel="noopener"></a>
+  <script src="chars.js"></script>
+  <script src="characters.js"></script>
+  <script src="update-check.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

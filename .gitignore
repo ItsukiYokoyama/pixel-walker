@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-zip
+*.zip
+.env
+.env.local
+*.log
+.DS_Store
+*:Zone.Identifier
+__pycache__
+preview/

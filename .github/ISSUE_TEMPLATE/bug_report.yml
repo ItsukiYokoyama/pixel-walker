@@ -1,0 +1,21 @@
+name: 不具合の報告 / Bug report
+description: うまく動かないところを報告する / Report something that doesn't work
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 何が起きたか / What happened
+      description: 期待した動きと、実際の動き / What you expected and what actually happened
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現する手順 / Steps to reproduce
+      description: 起きたページの種類（URL を書ける場合は URL）、選んでいたキャラクター、サイズなど / The kind of page (or its URL), the character and size you chose, etc.
+  - type: input
+    id: version
+    attributes:
+      label: バージョン / Versions
+      description: Pixel Walker と Chrome のバージョン（chrome://extensions と chrome://version で確認できます） / Pixel Walker and Chrome versions
