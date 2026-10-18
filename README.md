@@ -6,6 +6,8 @@ https://github.com/user-attachments/assets/b887f71f-f371-447a-83f1-a7f685752090
 文字の行から行へジャンプしたり、段落の端によじ登ったり、ぶら下がって降りたり、座ったり昼寝をしたりします。
 飛行機や魚などのキャラクターは、ページの上を自由に飛んだり泳いだりします。
 
+また、プレイヤーのキーボード入力で、キャラクターを直接操作することも可能です。
+
 **無料**で、すべての機能・すべてのキャラクターを使えます。
 
 > **English:** A Chrome extension where a pixel-art character walks around on the headings and text of the page you're viewing — jumping between lines, climbing ledges, sitting and napping — or turn on "Control the character" and move it yourself with the keyboard (←→ to walk, C to jump and double-jump). 196 characters, free, and it never sends the pages you view or your settings anywhere (it only checks for new versions, which you can turn off). Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
