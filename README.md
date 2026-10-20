@@ -37,7 +37,7 @@ GitHubで配布しています。ダウンロードして、Chromeに読み込�
 
 1. [Releases](https://github.com/ItsukiYokoyama/pixel-walker/releases/latest) から `pixel-walker-<バージョン>.zip` をダウンロードし、展開する
 2. Chromeで `chrome://extensions` を開き、右上の「デベロッパーモード」をオンにする
-3. 「パッケージ化されていない拡張機能を読み込む」を押し、展開してできた `pixel-walker` フォルダ（`manifest.json` がある階層）を選ぶ
+3. 「パッケージ化されていない拡張機能を読み込む」を押し、展開してできたフォルダ（`manifest.json` が入っているフォルダ）を選ぶ
 
 ### 新しいバージョンへの更新
 
@@ -123,15 +123,16 @@ pixel-walker/
 
 ### キャラクターの絵データ（tools/）
 
-`python3 tools/build.py` で `chars.js`・`chars/*.json`・`_locales/*/messages.json` のキャラクター名を作り直します
-（Python 3の標準ライブラリだけで動きます）。
+`python3 tools/build.py` で `chars.js`・`chars/*.json`・`_locales/*/messages.json` のキャラクター名を、`tools/` の
+元データからすべて作り直します（Python 3の標準ライブラリだけで動きます）。
 
-- 最初からいた68体（冒険家と動物）は、手描きの絵データをそのまま使う
+- `roster_sprites.py` + `sprites/<id>.json`: ドット絵の元データ（1 文字 = 1 ドットの方眼紙）から作るキャラクター。
+  最初からいた68体（冒険家と動物たち）はこの形
 - `roster_people.py`: 人・ファンタジーの人型。骨組みのポーズ×見た目（髪・帽子・服・持ち物）から描く（`humanoid.py`）。
-  歩きは4枚（踏み出す→脚を交差→反対の脚で踏み出す→交差）
+  人型は冒険家も含めて、歩きは4枚（踏み出す→脚を交差→反対の脚で踏み出す→交差）
 - `roster_vehicles.py` / `roster_creatures.py`: 乗り物・スライムや魚など。部品を描き、傾けてポーズにする（`vehicle.py`）
 - `roster_derived.py`: 既存の動物の色替え・模様・角や翼の追加（`derive.py`）
-- `i18n_names.py`: 新しいキャラクター名・ジャンル名の翻訳
+- `i18n_names.py`: キャラクター名・ジャンル名の翻訳
 - `preview.py`: 指定したキャラクターの全ポーズを並べた確認用の画像（`preview/<id>.png`）を作る
 - `make_zip.py`: 配布用の zip（`dist/pixel-walker-<バージョン>.zip`）を作る（リリースの手順は CONTRIBUTING.md）
 - `docs_image.py`: READMEの画像 `docs/characters.png`（ジャンルごとに先頭16体の待機ポーズ）を作り直す。

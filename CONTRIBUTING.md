@@ -35,6 +35,7 @@ Pixel Walker へのコントリビューションを歓迎します。キャラ�
 | 部品で描く生き物（魚・スライムなど） | `tools/roster_creatures.py` | `goldfish`, `slime` |
 | 乗り物 | `tools/roster_vehicles.py` | `car`, `airplane` |
 | 既存のキャラクターの色違い・角や翼の追加 | `tools/roster_derived.py` | `blackcat`, `unicorn` |
+| ドット絵を 1 マスずつ描く | `tools/roster_sprites.py` と `tools/sprites/<id>.json` | `adventurer`, `cat` |
 
 **id**（`'boy'` の部分）は英小文字・数字・`_` だけで、ほかのキャラクターと重ならないものにします。**ジャンル**は `people` / `animals` / `birds` / `sea` / `vehicles` / `fantasy` のどれかです（乗り物は書かなくてよい）。
 
@@ -84,9 +85,32 @@ Pixel Walker へのコントリビューションを歓迎します。キャラ�
 
 似たキャラクターをコピーして、少しずつ変えるのが近道です。
 
+#### ドット絵を 1 マスずつ描く（`roster_sprites.py` と `sprites/<id>.json`）
+
+`roster_sprites.py` に `id: (日本語名, ジャンル)` を足し、絵は `tools/sprites/<id>.json` に描きます。最初からいた 68 体（冒険家と動物たち）がこの形なので、似たキャラクターのファイルをコピーして直すのが近道です。
+
+```json
+{
+  "palette": { "k": "#46382a", "e": "#241812", "f": "#eecaa8" },
+  "unit": 0.5,
+  "fine": true,
+  "frames": {
+    "idle": { "ax": 18, "rows": ["....kkkk....", "...kffffk...", "..."] },
+    "hang1": { "ax": 28, "ledgeRow": 17, "rows": ["..."] }
+  }
+}
+```
+
+- `rows`: 絵の 1 行が 1 つの文字列。1 文字 = 1 ドットで、`.` は透明、ほかの文字は `palette` の色（`k` = 輪郭、`e` = 目、`q` = 目の光）
+- 右を向いた横向きで描き、いちばん下の行を地面にする。`ax` は体の中心の列
+- 大きさは 36×36（ぶら下がり・よじ登りは 44×48）。`unit` 0.5・`fine` true は全キャラクター共通
+- ポーズは `idle`（必須）・`walk1`・`walk2`（人型は `walk3`・`walk4` も）・`jump`・`fall`・`sit`・`sleep`・`hang1`・`hang2`・`pull1`〜`pull3`。無いポーズは `idle` で代わりに表示される
+- ぶら下がり・よじ登りの絵では、段差の角が「36 列目・`ledgeRow` 行目」に来るように描く
+- 泳ぐ・飛ぶキャラクターは `"swim": { "frames": ["walk1", "walk2"], "speed": 1 }` を足す
+
 #### 色違い・角や翼の追加（`roster_derived.py`）
 
-手描きの動物をもとに、色を置き換えたり部品を足したりします。
+ドット絵の元データ（`roster_sprites.py`）のキャラクターをもとに、色を置き換えたり部品を足したりします。
 
 ```python
 'unicorn': ('ユニコーン', 'fantasy', 'horse', dict(maps={'main': '#f6f4f8', 'b': '#c8a0f0', 'c': '#fbf8ff'},
@@ -121,7 +145,7 @@ Chrome に読み込み直し、ポップアップで選んで、歩く・ジャ�
 ### コードについて
 
 - 既存のコードの書き方（名前の付け方・コメントの量・日本語のコメント）に合わせてください
-- 手描きの 68 体（冒険家と最初の動物たち）の絵データは `chars/<id>.json` にしかありません。直すときはこのファイルを直接編集してください（`build.py` はそのまま残します）
+- 最初からいた 68 体（冒険家と動物たち）は、ドット絵の元データ `tools/sprites/<id>.json`（行ごとに 1 文字 = 1 ドット）から作っています。絵を直すときは、この元データを編集して `build.py` を実行してください。`chars/` のファイルは自動で作られるので、直接編集しないでください
 - 外部と通信するコード（今は `update-check.js` の新しいバージョンの確認だけ）や、新しい権限（`manifest.json` の `permissions`）が必要な変更は、先に Issue で相談してください
 
 ### リリースの手順（メンテナー向け）
@@ -173,10 +197,12 @@ Characters are drawn automatically from Python definitions. Add one entry to one
 | Creatures drawn from shapes (fish, slimes, ...) | `tools/roster_creatures.py` | `goldfish`, `slime` |
 | Vehicles | `tools/roster_vehicles.py` | `car`, `airplane` |
 | Recolors of existing characters, or adding horns/wings | `tools/roster_derived.py` | `blackcat`, `unicorn` |
+| Pixel art drawn dot by dot | `tools/roster_sprites.py` and `tools/sprites/<id>.json` | `adventurer`, `cat` |
 
 - The **id** must use only lowercase letters, digits and `_`, and be unique. The **genre** is one of `people`, `animals`, `birds`, `sea`, `vehicles`, `fantasy` (not needed for vehicles).
 - **Humanoids**: `id: (Japanese name, genre, look)`. The look sets clothes, hair, hats, items and so on; all options and defaults are in `Look.DEF` in `tools/humanoid.py` (see the table in the Japanese section for the supported values). All 14 poses are generated automatically.
 - **Creatures and vehicles**: drawn from shapes (`poly`, `ellipse`, `rrect`, `eye`, `window`, ...) in side view; x = forward, y = down, ground at y = 0. `('step', 0|1, shape)` draws a shape only in walk frame 1 or 2. `fly=True` makes it fly or swim instead of walking. See `draw` in `tools/vehicle.py`. Copying a similar character and changing it is the easiest way.
+- **Pixel art**: add `id: (Japanese name, genre)` to `roster_sprites.py` and draw `tools/sprites/<id>.json`: each frame is a list of rows, one character per pixel (`.` is transparent, other characters map to `palette` colors), facing right with the bottom row as the ground, 36×36 (44×48 for hanging/climbing, with the ledge corner at column 36 and row `ledgeRow`). Only `idle` is required. Copying one of the original 68 characters is the easiest start.
 - **Derived characters**: `id: (Japanese name, genre, base character, settings)` with color `maps`, `outline`, `spots`, and `parts` such as `horn`, `horns2`, `wings` (`tools/derive.py`).
 - **Names**: add the name in 6 more languages to `NAMES` in `tools/i18n_names.py`, in the order (English, Spanish, Korean, Portuguese, Simplified Chinese, Traditional Chinese). The Japanese name goes in the roster file.
 
@@ -194,7 +220,7 @@ Reload the extension in Chrome, pick the character in the popup, and check walki
 ### Code
 
 - Follow the style of the surrounding code (naming, comment density, Japanese comments)
-- The 68 hand-drawn characters exist only as `chars/<id>.json`; edit those files directly (`build.py` keeps them as they are)
+- The original 68 characters (the adventurer and the animals) are built from pixel-art source files `tools/sprites/<id>.json` (one character per pixel in each row). Edit those files and run `build.py`; never edit the generated files in `chars/`
 - Please open an issue first for changes that need network access (currently only the version check in `update-check.js`) or new permissions in `manifest.json`
 
 ### Releasing (maintainers)
