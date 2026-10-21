@@ -10,6 +10,7 @@ THIGH, SHIN = 4.6, 4.4
 UPPER, FORE = 3.6, 3.4
 TORSO = 9.0
 HEAD_R = (6.6, 6.1)
+BODY_SX = 0.62  # 胴まわり(服・スカート・マントを含む)の横幅の倍率。頭には影響しない
 
 # ---- ポーズ ----
 # hip: 腰の位置(None なら足が地面に着くよう自動)/ lean: 体の傾き(+ = 前)/ nl,fl: 手前・奥の脚 /
@@ -103,7 +104,7 @@ def draw(look, pose, w=36, h=36, hang=None, pal=None):
     else:  # 低い方の足が地面に着く高さ
         fy = max(limb(0, 0, a1, a2, THIGH, SHIN)[1][1] for a1, a2 in (nl, fl))
         y = GROUND - 1.0 - fy
-    hip = T(x, y, lean)
+    hip = T(x, y, lean, sx=BODY_SX)
     neck = hip.apply(0, -TORSO)
     sh = hip.apply(0.3, -TORSO + 1.6)  # 肩
     hipN = hip.apply(0.6, -0.6)
@@ -209,7 +210,8 @@ def draw(look, pose, w=36, h=36, hang=None, pal=None):
         ct = hip.then(-0.5, -TORSO + 1.2, swing)
         cv.shape(poly([(-3.5, 0), (3.0, 0), (1.0, 9.5), (-8.5, 11.5)]), ct, cc)
     # 長い髪(背中側)
-    head_t = hip.then(0.6, -TORSO - 5.6, p.get('head', 0) + (-lean if lean == 90 else 0) * 0)
+    # 頭は胴の横幅の倍率(BODY_SX)を引き継がない
+    head_t = T(*hip.apply(0.6, -TORSO - 5.6), lean + p.get('head', 0))
     if lean == 90:
         head_t = T(neck[0] + 5.6, neck[1] - 0.6, -90)
     hs = look.hair_style
@@ -345,12 +347,22 @@ def draw_head(cv, pal, look, t, eyes):
         draw_hat(cv, pal, look, t)
 
 
+# 開いた目(見た目の eyes が 'normal' / 'big' のキャラクターに共通): 上まつげ + 白目 + 縦 3 ドットの黒目(右上に光)。
+# (x, y, 色) の並び。色: 'e' = 黒目(eye_col があればその色) / 'q' = 白目・光 / 'k' = まつげ
+OPEN_EYES = [(1.4, -1.0, 'k'), (2.4, -1.0, 'k'), (3.4, -1.0, 'k'), (1.4, 0.0, 'q'), (1.4, 1.0, 'q'),
+             (2.4, 0.0, 'e'), (3.4, 0.0, 'q'), (2.4, 1.0, 'e'), (3.4, 1.0, 'e'), (2.4, 2.0, 'e'), (3.4, 2.0, 'e'),
+             (5.4, -1.0, 'k'), (5.4, 0.0, 'e'), (5.4, 1.0, 'e'), (5.4, 2.0, 'e')]
+
+
 def draw_face(cv, pal, look, t, eyes):
     ek = look.eyes
     e, q = 'e', 'q'
     if look.eye_col:
         e = pal.sym(look.eye_col)
-    if eyes == 'closed' or ek == 'closed':
+    if ek in ('normal', 'big') and eyes != 'closed':
+        for lx, ly, c in OPEN_EYES:
+            cv.dot(t, lx, ly, {'e': e, 'q': q, 'k': 'e'}[c])
+    elif eyes == 'closed' or ek == 'closed':
         for lx in (2.0, 3.0):
             cv.dot(t, lx, 1.2, 'e')
         cv.dot(t, 5.4, 1.2, 'e')
@@ -359,11 +371,6 @@ def draw_face(cv, pal, look, t, eyes):
     elif ek == 'glow':
         for lx, ly in ((2.2, 0), (2.2, 1), (5.2, 0), (5.2, 1)):
             cv.dot(t, lx, ly, pal.sym(look.eye_col or '#ff4040'))
-    elif ek == 'big':  # 大きな目: 上まつげ + 後ろに白目 + 2 マス幅の黒目(右上に光)
-        for lx, ly, s in ((1.4, -1.0, 'e'), (2.4, -1.0, 'e'), (3.4, -1.0, 'e'), (1.4, 0.0, q), (1.4, 1.0, q),
-                          (2.4, 0.0, e), (3.4, 0.0, q), (2.4, 1.0, e), (3.4, 1.0, e),
-                          (5.4, -1.0, 'e'), (5.4, 0.0, e), (5.4, 1.0, e)):
-            cv.dot(t, lx, ly, s)
     elif ek == 'sockets':  # がい骨
         for lx, ly in ((1.8, -0.5), (2.8, -0.5), (1.8, 0.5), (2.8, 0.5), (5.2, -0.5), (5.2, 0.5), (4.4, 2.6)):
             cv.dot(t, lx, ly, 'e')
@@ -371,14 +378,6 @@ def draw_face(cv, pal, look, t, eyes):
         for lx, ly in ((1.4, -1), (2.4, -1), (1.4, 0), (2.4, 0), (3.4, 0), (2.4, 1), (3.4, 1), (5.4, -1), (5.4, 0), (5.4, 1)):
             cv.dot(t, lx, ly, 'e')
         cv.dot(t, 1.4, -1, 'q')
-    else:
-        # 黒目の後ろ(左)に白目を置いて、進む方向を見ている目にする。手前の目の上に眉
-        for lx, ly, s in ((1.4, 0.0, q), (1.4, 1.0, q), (2.4, 0.0, e), (2.4, 1.0, e), (5.4, 0.0, e), (5.4, 1.0, e)):
-            cv.dot(t, lx, ly, s)
-        if not (look.glasses or look.beard or getattr(look, 'glasses_dark', False)) and look.hat not in ('ninja', 'helmet', 'knight', 'astro'):
-            bc = pal.sym(tint(look.hair, 0.6))
-            for lx in (2.4, 5.4):
-                cv.dot(t, lx, -1.2, bc)
     if look.glasses:
         gs = pal.sym(look.glasses)
         for lx, ly in ((1.4, -1), (3.4, -1), (1.4, 2), (3.4, 2), (1.4, 0), (1.4, 1), (3.4, 0), (3.4, 1), (4.4, -1),
