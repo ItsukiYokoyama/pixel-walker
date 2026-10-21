@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/b887f71f-f371-447a-83f1-a7f685752090
 
 > **English:** A Chrome extension where a pixel-art character walks around on the headings and text of the page you're viewing — jumping between lines, climbing ledges, sitting and napping — or turn on "Control the character" and move it yourself with the keyboard (←→ to walk, C to jump and double-jump). 196 characters, free, and it never sends the pages you view or your settings anywhere (it only checks for new versions, which you can turn off). Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-![キャラクターの一部](docs/characters.png)
+<img width="1680" height="3712" alt="character-list" src="https://github.com/user-attachments/assets/db395c15-b551-45ff-baba-ffbb23602e23" />
 
 ## 特長
 
