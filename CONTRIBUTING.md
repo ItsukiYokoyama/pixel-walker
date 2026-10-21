@@ -144,6 +144,7 @@ Chrome に読み込み直し、ポップアップで選んで、歩く・ジャ�
 
 ### コードについて
 
+- コミットメッセージは**英語**で書いてください（例: `Add a baker character`）
 - 既存のコードの書き方（名前の付け方・コメントの量・日本語のコメント）に合わせてください
 - 最初からいた 68 体（冒険家と動物たち）は、ドット絵の元データ `tools/sprites/<id>.json`（行ごとに 1 文字 = 1 ドット）から作っています。絵を直すときは、この元データを編集して `build.py` を実行してください。`chars/` のファイルは自動で作られるので、直接編集しないでください
 - 外部と通信するコード（今は `update-check.js` の新しいバージョンの確認だけ）や、新しい権限（`manifest.json` の `permissions`）が必要な変更は、先に Issue で相談してください
@@ -219,6 +220,7 @@ Reload the extension in Chrome, pick the character in the popup, and check walki
 
 ### Code
 
+- Write commit messages **in English** (e.g. `Add a baker character`)
 - Follow the style of the surrounding code (naming, comment density, Japanese comments)
 - The original 68 characters (the adventurer and the animals) are built from pixel-art source files `tools/sprites/<id>.json` (one character per pixel in each row). Edit those files and run `build.py`; never edit the generated files in `chars/`
 - Please open an issue first for changes that need network access (currently only the version check in `update-check.js`) or new permissions in `manifest.json`

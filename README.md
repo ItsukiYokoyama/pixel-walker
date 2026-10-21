@@ -158,3 +158,151 @@ JavaScript・JSON の壊れを自動で確かめます。
 ## ライセンス / License
 
 [GPL-3.0](LICENSE)
+
+---
+
+# Pixel Walker (English)
+
+A Chrome extension where a pixel-art character walks around using the headings and text of the web page you're viewing as platforms.
+It jumps from line to line, climbs up the edges of paragraphs, hangs and drops down, sits, and takes naps.
+Characters such as airplanes and fish fly or swim freely over the page.
+
+You can also control the character directly with your keyboard.
+
+It's **free**, and every feature and every character is available to everyone.
+
+## Features
+
+- Choose from **196 characters** in 6 genres
+  - People (office worker, chef, astronaut, idol, ...)
+  - Animals (dog, cat, lion, panda, ...)
+  - Birds & reptiles (owl, penguin, crocodile, frog, ...)
+  - Sea life (whale, dolphin, jellyfish, octopus, ...)
+  - Vehicles (police car, bullet train, airplane, UFO, ...)
+  - Fantasy (wizard, knight, dragon, slime, ...)
+- **Pick the character up with your mouse and carry it anywhere.** Let go and it flies off with the momentum of your throw, then lands
+  (flying and swimming characters start moving again from where you dropped them; a quick tap makes the character hop in place)
+- Turn on "Control the character" to move it with the keyboard (←→ to walk, C to jump and double-jump, and more)
+- Three sizes: small, medium, large
+- Available in Japanese, English, Chinese (Simplified/Traditional), Korean, Spanish, and Portuguese
+- Stays out of your way (clicks anywhere except on the character itself go straight through to the page)
+- Shows a "!" in the settings window when a new version is released
+
+## Installation
+
+Pixel Walker is distributed on GitHub. Download it and load it into Chrome.
+
+1. Download `pixel-walker-<version>.zip` from [Releases](https://github.com/ItsukiYokoyama/pixel-walker/releases/latest) and extract it
+2. Open `chrome://extensions` in Chrome and turn on "Developer mode" in the top right
+3. Click "Load unpacked" and choose the extracted folder (the folder that contains `manifest.json`)
+
+### Updating to a new version
+
+When a new version is released, a "!" appears in the top right of the settings window. Follow the steps on the
+[release notes page](https://ditsuki.com/en/pixel-walker/releases) it links to.
+
+1. Download the zip of the new version and extract it
+2. **Copy the contents** of the extracted folder **over** the folder you are using now (the folder you loaded first)
+3. On `chrome://extensions`, press the reload button (circular arrow) for Pixel Walker
+
+If you overwrite the same folder, your settings (such as the character you chose) are kept.
+
+## Usage
+
+Click the Pixel Walker icon in the toolbar to open the settings.
+
+- **Show character**: turn the character on or off
+- **Size**: small, medium, large
+- **Control the character**: when on, the character stops moving on its own and you move it with the keyboard.
+  Click the page once before using the keys (it ignores typing in input fields and keys pressed with Ctrl, Alt, or Cmd)
+
+  | Key | Action |
+  |---|---|
+  | ← → | Walk (falls off at the edge of a paragraph) |
+  | C | Jump (toward ← or → if held; press again in the air to double-jump) |
+  | ↓ + C | Drop down from the current paragraph |
+  | X | Action (sleep, sit, or dance; ← → cancels it) |
+
+  Flying and swimming characters (airplanes, fish, ...) move freely with ↑ ↓ ← → (they don't pass through paragraphs or images; they slide along their edges)
+- **Character**: choose a genre with the tabs at the top, then click a character to switch to it right away
+- **Check for new versions**: when off, the extension doesn't check for new versions (see "Privacy" below)
+
+Settings are saved automatically. If Chrome Sync is on, they carry over to your other devices signed in to the same Google account.
+
+## Privacy
+
+**Neither the content of the pages you view nor your settings are sent anywhere, including to the developer.**
+
+The only network access is the check for new versions.
+
+- When you open the settings window (at most once a day), it reads `https://ditsuki.com/pixel-walker/latest.json` (a public file
+  containing only the latest version number). The site receives only the same information as any ordinary web page visit
+  (such as your IP address and browser type). Turn off "Check for new versions" in the settings window to skip this check
+- To decide where the character can walk, it calculates the "positions" of text and images on the page inside your browser,
+  but it never saves or sends the page's content
+- Settings (on/off, size, chosen character) are stored in `chrome.storage.sync`
+- The only permission it needs is `storage` (to save settings). It runs on every page in order to show the character
+
+## Requests and contact
+
+Send requests such as "I'd like this character" from "Request a character / Contact" at the bottom of the settings window,
+or from the [contact page](https://ditsuki.com/en/contact?product=pixel-walker).
+The link only opens the contact page; the extension itself never sends anything.
+
+---
+
+## For developers
+
+Plain JavaScript with no build step.
+
+```
+pixel-walker/
+├── manifest.json
+├── content.js      # Runs on every page. The character's movement and drawing
+├── background.js   # Service worker. Only reads chars/<id>.json for content.js
+├── characters.js   # Loads character data and turns it into pixel grids and palettes for drawing
+├── chars.js        # List of characters (id, name, genre). Generated
+├── chars/<id>.json # Image data for one character. Generated
+├── popup.html / popup.js   # Settings window (on/off, size, character selection by genre)
+├── update-check.js # New version check (reads latest.json on ditsuki.com at most once a day when the settings window opens)
+├── _locales/       # Text in 7 languages
+├── icons/          # 16/48/128px
+├── docs/           # Images for the README
+├── character-list.html / .js  # Idle poses of all characters (for checking; always drawn from the latest data)
+├── tools/          # Scripts that generate the character data (Python; not needed to run the extension)
+├── .github/        # Pull request checks, issue and pull request templates
+├── CONTRIBUTING.md # Contribution guide (how to add characters)
+└── LICENSE         # GPL-3.0
+```
+
+Only the character list (`chars.js`, about 7 KB) is loaded into each page; the image data is loaded through
+`background.js` for the one character being shown (it only reads files inside the extension and never talks to any server).
+
+### Character data (tools/)
+
+`python3 tools/build.py` rebuilds `chars.js`, `chars/*.json`, and the character names in `_locales/*/messages.json`
+entirely from the source data in `tools/` (it needs only the Python 3 standard library).
+
+- `roster_sprites.py` + `sprites/<id>.json`: characters built from pixel-art source data (a grid with one character per pixel).
+  The original 68 characters (the adventurer and the animals) use this form
+- `roster_people.py`: people and humanoid fantasy characters, drawn from skeleton poses × looks (hair, hats, clothes, items) (`humanoid.py`).
+  All humanoids, including the adventurer, walk with 4 frames (step → legs cross → step with the other leg → legs cross)
+- `roster_vehicles.py` / `roster_creatures.py`: vehicles, slimes, fish, and so on, drawn from parts and tilted into poses (`vehicle.py`)
+- `roster_derived.py`: recolors, patterns, and added horns or wings for existing animals (`derive.py`)
+- `i18n_names.py`: translations of character and genre names
+- `preview.py`: creates an image of every pose of the given character (`preview/<id>.png`) for checking
+- `make_zip.py`: creates the zip for distribution (`dist/pixel-walker-<version>.zip`) (see CONTRIBUTING.md for the release steps)
+- `docs_image.py`: rebuilds the README image `docs/characters.png` (idle poses of the first 16 characters of each genre).
+  Run `python3 tools/docs_image.py` after `build.py`
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add characters.
+On pull requests, GitHub Actions (`.github/workflows/check.yml`) checks for generated files that weren't rebuilt and for broken
+JavaScript or JSON.
+
+With the extension loaded, open `chrome-extension://<extension id>/character-list.html` to see every character.
+
+### Known limitations
+
+- Flying and swimming characters (airplanes, fish, ...) have only an idle pose and two movement frames; other poses use the idle image
+- Testing has been done in headless Edge (Chromium): loading and drawing every character, showing them on pages, and the tabs in the
+  settings window. Long-term hands-on testing in real Chrome hasn't been done yet
