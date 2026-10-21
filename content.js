@@ -1096,6 +1096,11 @@
   // 表示するキャラクターの絵データを読み込んでから、表示を始める/絵を差し替える
   let applySeq = 0;
   function apply() {
+    // 拡張機能を更新(再読み込み)すると、開いたままのタブの古いコピーは拡張機能から切り離される。そのときは静かに止まる
+    if (!globalThis.chrome?.runtime?.id) {
+      stop();
+      return;
+    }
     if (!settings.enabled) {
       applySeq++;
       stop();

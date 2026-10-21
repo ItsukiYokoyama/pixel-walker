@@ -105,6 +105,8 @@
   // 拡張機能のページ(ポップアップ)は自分で読める。Webページに入る content script は、
   // background.js に読んでもらう(拡張機能の中のファイルを読むだけで、外部とは通信しない)
   function fetchText(id) {
+    // 拡張機能のページ・content script 以外(ファイルを直接開いた、拡張機能を更新して切り離されたなど)では読めない
+    if (!globalThis.chrome?.runtime?.getURL) return Promise.reject(new Error('Pixel Walker: 拡張機能の外では絵データを読めません'));
     const url = chrome.runtime.getURL(`chars/${id}.json`);
     if (location.protocol === 'chrome-extension:') return fetch(url).then((r) => r.text());
     return new Promise((resolve, reject) => {

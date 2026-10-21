@@ -12,7 +12,8 @@ SKIP = ('tools/', 'docs/', '.github/', '.gitignore', 'README.md', 'CONTRIBUTING.
 
 
 def main():
-    if subprocess.run(['git', 'status', '--porcelain'], cwd=ROOT, capture_output=True, text=True).stdout.strip():
+    # zip に入れるのはコミット済みのファイルだけなので、git に入っていないファイル(手元のメモや画像など)は気にしない
+    if subprocess.run(['git', 'status', '--porcelain', '--untracked-files=no'], cwd=ROOT, capture_output=True, text=True).stdout.strip():
         sys.exit('コミットしていない変更があります。コミットしてから作ってください')
     version = json.load(open(os.path.join(ROOT, 'manifest.json'), encoding='utf-8'))['version']
     files = subprocess.run(['git', 'ls-files', '-z'], cwd=ROOT, capture_output=True, text=True).stdout.split('\0')
